@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  /* No scrollbar class */
+  /* Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .title {
+    @apply text-xl font-semibold;
+  }
+  .title-large {
+    @apply text-2xl font-semibold;
+  }
+  .custom-shadow-sm {
+    box-shadow: 0 1px 3px #00000026;
+  }
+  .custom-shadow {
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+  }
+  .custom-shadow-md {
+    box-shadow: rgba(14, 30, 37, 0.05) 0px 2px 4px 0px, rgba(14, 30, 37, 0.1) 0px 2px 16px 0px;
+  }
+  .custom-shadow-lg {
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  }
+  .custom-shadow-4xl {
+    box-shadow: rgba(27, 52, 122, 0.25) 0px 50px 100px -20px,
+      rgba(27, 52, 122, 0.3) 0px 30px 60px -30px, rgba(27, 52, 122, 0.35) 0px -2px 6px 0px inset;
+  }
+  .border-bottom {
+    @apply border-b-[1px] border-gray-400;
+  }
+  .custom-select-arrow {
+    background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    -moz-appearance: none; /* Firefox */
+    -webkit-appearance: none; /* Safari and Chrome */
+    appearance: none;
+    background-repeat: no-repeat;
+    background-position-x: 100%; /** left position */
+    background-position-y: 0px; /** top position */
+  }
+  .h-dvh {
+    height: 100vh;
+    height: 100dvh;
+  }
+  .min-h-dvh {
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+  .max-h-dvh {
+    max-height: 100vh;
+    max-height: 100dvh;
+  }
+}
+@layer base {
+  *:not(svg *) {
+    @apply text-normal text-current text-base;
+    font-size: inherit;
+  }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
+    Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+input {
+  outline: none;
+}
+
+button {
+  outline: none;
+  font-size: unset;
+  font-weight: unset;
+}
+select:invalid {
+  @apply text-light;
+}
+* {
+  box-sizing: border-box;
+}
+
+/* Custom scrollbar */
+/* width */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Handle */
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #7b7b7c;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #a01b25;
+}
