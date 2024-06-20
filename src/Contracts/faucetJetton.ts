@@ -1,14 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import {
-  Contract,
-  ContractProvider,
-  Sender,
-  Address,
-  Cell,
-  contractAddress,
-  beginCell,
-  toNano,
-} from "@ton/core";
+import { Contract, ContractProvider, Sender, Address, Cell, beginCell, toNano } from "@ton/core";
 
 export default class FaucetJetton implements Contract {
   async sendMintFromFaucet(provider: ContractProvider, via: Sender, receivingAddress: Address) {

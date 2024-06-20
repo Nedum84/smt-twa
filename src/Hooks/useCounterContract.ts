@@ -5,6 +5,7 @@ import { useTonConnect } from "./useTonConnect";
 import { Address, OpenedContract } from "@ton/core";
 import { useQuery } from "@tanstack/react-query";
 import { CHAIN } from "@tonconnect/protocol";
+import { Contract } from "ton-core";
 
 export function useCounterContract() {
   const { client } = useTonClient();
@@ -19,7 +20,7 @@ export function useCounterContract() {
           : "EQBYLTm4nsvoqJRvs_L-IGNKwWs5RKe19HBK_lFadf19FUfb"
       ) // replace with your address from tutorial 2 step 8
     );
-    return client.open(contract) as OpenedContract<Counter>;
+    return client.open(contract as unknown as Contract) as OpenedContract<Counter>;
   }, [client]);
 
   const { data, isFetching } = useQuery({
